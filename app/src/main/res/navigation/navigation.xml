@@ -49,4 +49,9 @@
             android:id="@+id/action_addProjectFragment_to_projectFragment"
             app:destination="@id/projectFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/risicosFragment"
+        android:name="be.adembacaj.bureau9000.RisicosFragment"
+        android:label="fragment_risicos"
+        tools:layout="@layout/fragment_risicos" />
 </navigation>
