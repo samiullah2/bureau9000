@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KlantenGegevensFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/cardview_compat_inset_shadow"
+            android:text="KLANTENGEGEVENS"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nickname_text"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:text="Naam"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Proximus" />
+
+        <TextView
+            android:id="@+id/adres_text"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:text="Adres"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextAdres"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Koningslaan, 56 1000 Brussel" />
+
+        <TextView
+            android:id="@+id/Email_text"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:text="E-mail"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmail"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Proximus@Proximus.be" />
+
+        <TextView
+            android:id="@+id/KlantId_text"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:text="KlantId"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextKlantId"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="15" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="326dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="@android:dimen/app_icon_size" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="326dp"
+            android:layout_height="61dp"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:text="Bevestigen" />
+
+    </LinearLayout>
+</FrameLayout>
+</layout>
