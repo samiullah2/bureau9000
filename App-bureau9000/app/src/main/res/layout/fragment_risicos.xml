@@ -30,6 +30,7 @@
                 android:textColor="#8BC34A" />
 
             <Button
+                android:id="@+id/btnKiesRisico"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "912368249150",
+    "project_id": "bureau9000-35caf",
+    "storage_bucket": "bureau9000-35caf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912368249150:android:81f77ab84ce2e297baa46f",
+        "android_client_info": {
+          "package_name": "be.adembacaj.bureau9000"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912368249150-0qokn4barm1psku01cjrh35cm4marovt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "be.adembacaj.bureau9000",
+            "certificate_hash": "3d245461dab1896b34fb4ef625ebb29d406d0896"
+          }
+        },
+        {
+          "client_id": "912368249150-8fl12ajt9c3arvb5hfvac4uc4m01t5gg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdf5NTFztCM6-YOjrYSzevXAI-p_UisOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912368249150-8fl12ajt9c3arvb5hfvac4uc4m01t5gg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
