@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 
-private const val BASE_URL_RISICOBESCHRIJVING = "https://adembacaj.be/bureau9000/Rest-api/risicobeschrijving"
+private const val BASE_URL_RISICOBESCHRIJVING = "https://adembacaj.be/bureau9000/Rest-api/risicobeschrijving/"
 
 
 private val retrofit_Risicobeschrijving = Retrofit.Builder()
@@ -16,7 +16,7 @@ private val retrofit_Risicobeschrijving = Retrofit.Builder()
 
 interface ApiService {
     @GET("read.php")
-    fun getRisicos(): Call<Risicobeschrijving>
+    fun getRisicos(): Call<ArrayList<Risicobeschrijving>>
 
 //    @GET("login.php")
 //    fun checklogin(

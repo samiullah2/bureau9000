@@ -11,7 +11,7 @@
     android:background="#d3d3d3">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewRisicoBesc"
         android:layout_width="342dp"
         android:layout_height="37dp"
         android:layout_marginTop="36dp"
@@ -33,7 +33,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewRisicoBesc" />
 
     <ImageView
         android:id="@+id/imageView"

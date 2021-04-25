@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/kiesRisicoFragment">
+    app:startDestination="@id/risicosFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="be.adembacaj.bureau9000.LoginFragment"
@@ -53,10 +53,18 @@
         android:id="@+id/risicosFragment"
         android:name="be.adembacaj.bureau9000.RisicosFragment"
         android:label="fragment_risicos"
-        tools:layout="@layout/fragment_risicos" />
+        tools:layout="@layout/fragment_risicos" >
+        <action
+            android:id="@+id/action_risicosFragment_to_kiesRisicoFragment"
+            app:destination="@id/kiesRisicoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/kiesRisicoFragment"
         android:name="be.adembacaj.bureau9000.KiesRisicoFragment"
         android:label="fragment_kies_risico"
-        tools:layout="@layout/fragment_kies_risico" />
+        tools:layout="@layout/fragment_kies_risico" >
+        <action
+            android:id="@+id/action_kiesRisicoFragment_to_risicosFragment"
+            app:destination="@id/risicosFragment" />
+    </fragment>
 </navigation>
