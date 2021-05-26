@@ -2,4 +2,16 @@
     <string name="app_name">Bureau9000</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Spinner Options: Functie van een gebouw -->
+    <string-array name="functiesGebouwArray">
+        <item>Kantoor</item>
+        <item>Retail</item>
+        <item>Industrie</item>
+        <item>Openbare besturen</item>
+        <item>Warehousing</item>
+        <item>Datacenter</item>
+    </string-array>
+
 </resources>

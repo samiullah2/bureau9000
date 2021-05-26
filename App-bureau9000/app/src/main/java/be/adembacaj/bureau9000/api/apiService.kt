@@ -8,6 +8,7 @@ import retrofit2.http.*
 private const val BASE_URL_PROJECT = "https://adembacaj.be/bureau9000/Rest-api/project/"
 private const val BASE_URL_RISICOBESCHRIJVING = "https://adembacaj.be/bureau9000/Rest-api/risicobeschrijving/"
 private const val BASE_URL_OPDRACHTGEVER = "https://adembacaj.be/bureau9000/Rest-api/opdrachtgever/"
+private const val BASE_URL_GEBOUW = "https://adembacaj.be/bureau9000/Rest-api/gebouw/"
 
 private val retrofit_Project = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
@@ -22,6 +23,11 @@ private val retrofit_Risicobeschrijving = Retrofit.Builder()
 private val retrofit_Opdrachtgever = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
     .baseUrl(BASE_URL_OPDRACHTGEVER)
+    .build()
+
+private val retrofit_Gebouw = Retrofit.Builder()
+    .addConverterFactory(GsonConverterFactory.create())
+    .baseUrl(BASE_URL_GEBOUW)
     .build()
 
 interface ApiServiceProject {
@@ -57,6 +63,15 @@ interface ApiServiceRisicobeschrijving {
     fun getRisicos(): Call<ArrayList<Risicobeschrijving>>
 }
 
+interface ApiServiceGebouw {
+    @GET("read.php")
+    fun getGebouwen(): Call<ArrayList<Gebouw>>
+
+    @Headers("Content-Type: application/json")
+    @POST("create.php")
+    fun addGebouw(@Body gebouwData: Gebouw): Call<Gebouw>
+}
+
 
 object Api_Project {
     val retrofitService : ApiServiceProject by lazy{
@@ -73,5 +88,11 @@ object Api_Opdrachtgever {
 object Api_Risicobeschrijving {
     val retrofitService : ApiServiceRisicobeschrijving by lazy{
         retrofit_Risicobeschrijving.create(ApiServiceRisicobeschrijving::class.java)
+    }
+}
+
+object Api_Gebouw {
+    val retrofitService : ApiServiceGebouw by lazy{
+        retrofit_Gebouw.create(ApiServiceGebouw::class.java)
     }
 }

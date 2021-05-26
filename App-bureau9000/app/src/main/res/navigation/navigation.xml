@@ -31,11 +31,6 @@
         android:label="fragment_detail_kast"
         tools:layout="@layout/fragment_detail_kast" />
     <fragment
-        android:id="@+id/gebouwDetailVraagFragment"
-        android:name="be.adembacaj.bureau9000.Gebouw.GebouwDetailVraagFragment"
-        android:label="fragment_gebouw_detail_vraag"
-        tools:layout="@layout/fragment_gebouw_detail_vraag" />
-    <fragment
         android:id="@+id/addProjectFragment"
         android:name="be.adembacaj.bureau9000.Project.AddProjectFragment"
         android:label="fragment_add_project"
@@ -66,7 +61,11 @@
         android:id="@+id/gebouwFragment"
         android:name="be.adembacaj.bureau9000.Gebouw.GebouwFragment"
         android:label="fragment_gebouw"
-        tools:layout="@layout/fragment_gebouw" />
+        tools:layout="@layout/fragment_gebouw" >
+        <action
+            android:id="@+id/action_gebouwFragment_to_addGebouwFragment"
+            app:destination="@id/addGebouwFragment" />
+    </fragment>
     <fragment
         android:id="@+id/projectGegevensFragment"
         android:name="be.adembacaj.bureau9000.Project.ProjectGegevensFragment"
@@ -85,4 +84,18 @@
             android:id="@+id/action_addProjectGegevensFragment_to_projectFragment"
             app:destination="@id/projectFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addGebouwFragment"
+        android:name="be.adembacaj.bureau9000.Gebouw.AddGebouwFragment"
+        android:label="fragment_add_gebouw"
+        tools:layout="@layout/fragment_add_gebouw" >
+        <action
+            android:id="@+id/action_addGebouwFragment_to_addRisicosToGebouwFragment"
+            app:destination="@id/addRisicosToGebouwFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRisicosToGebouwFragment"
+        android:name="be.adembacaj.bureau9000.Gebouw.AddRisicosToGebouwFragment"
+        android:label="fragment_add_risicos_to_gebouw"
+        tools:layout="@layout/fragment_add_risicos_to_gebouw" />
 </navigation>

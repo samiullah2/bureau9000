@@ -45,7 +45,7 @@ class ProjectGegevensFragment : Fragment() {
 
         binding.buttonGebouwen.setOnClickListener{
             val bundle = Bundle()
-            bundle.putString("idOfCurrentProject", idOfCurrentProject.toString())
+            bundle.putInt("idOfCurrentProject", idOfCurrentProject)
 
             view?.findNavController()?.navigate(R.id.action_projectGegevensFragment_to_gebouwFragment, bundle)
         }

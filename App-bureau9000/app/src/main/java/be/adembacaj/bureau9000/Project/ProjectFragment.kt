@@ -33,7 +33,7 @@ class ProjectFragment : Fragment() {
                 val projecten = mutableListOf<Project>()
 
                 if (response.body().isNullOrEmpty()) {
-                    // do nothing
+                    Toast.makeText(context,"Druk op de button om een nieuw project toe te voegen", Toast.LENGTH_SHORT).show()
                 }
                 else {
                     projecten.addAll(response.body()!!)
