@@ -90,12 +90,17 @@
         android:label="fragment_add_gebouw"
         tools:layout="@layout/fragment_add_gebouw" >
         <action
-            android:id="@+id/action_addGebouwFragment_to_addRisicosToGebouwFragment"
-            app:destination="@id/addRisicosToGebouwFragment" />
+            android:id="@+id/action_addGebouwFragment_to_risicosGebouwFragment"
+            app:destination="@id/risicosGebouwFragment" />
     </fragment>
     <fragment
         android:id="@+id/addRisicosToGebouwFragment"
         android:name="be.adembacaj.bureau9000.Gebouw.AddRisicosToGebouwFragment"
         android:label="fragment_add_risicos_to_gebouw"
         tools:layout="@layout/fragment_add_risicos_to_gebouw" />
+    <fragment
+        android:id="@+id/risicosGebouwFragment"
+        android:name="be.adembacaj.bureau9000.Gebouw.RisicosGebouwFragment"
+        android:label="fragment_risicos_gebouw"
+        tools:layout="@layout/fragment_risicos_gebouw" />
 </navigation>

@@ -30,29 +30,33 @@ class AddGebouwFragment : Fragment() {
         // to get the ID of the current project
         val idOfCurrentProject = arguments?.getInt("idOfCurrentProject")
 
-        val gebouwToAdd = Gebouw (
-            naam = binding.editTextNaamGebouw.text.toString(),
-            adres = binding.editTextAdresGebouw.text.toString(),
-            postcode = Integer.parseInt(binding.editTextPostcodeGebouw.text.toString()),
-            gemeente = binding.editTextGemeenteGebouw.text.toString(),
-            hoogte = Integer.parseInt(binding.editTextHoogteGebouw.text.toString()),
-            functie = binding.spinnerFunctieGebouw.selectedItem.toString(),
-            projectId = idOfCurrentProject!!
+        binding.buttonAddGebouw.setOnClickListener{
+
+            val gebouwToAdd = Gebouw (
+                naam = binding.editTextNaamGebouw.text.toString(),
+                adres = binding.editTextAdresGebouw.text.toString(),
+                postcode = Integer.parseInt(binding.editTextPostcodeGebouw.text.toString()),
+                gemeente = binding.editTextGemeenteGebouw.text.toString(),
+                hoogte = Integer.parseInt(binding.editTextHoogteGebouw.text.toString()),
+                functie = binding.spinnerFunctieGebouw.selectedItem.toString(),
+                projectId = idOfCurrentProject!!
             )
 
-        Api_Gebouw.retrofitService.addGebouw(gebouwToAdd).enqueue(object : Callback<Gebouw>{
+            Api_Gebouw.retrofitService.addGebouw(gebouwToAdd).enqueue(object : Callback<Gebouw>{
 
-            override fun onResponse(call: Call<Gebouw>, response: Response<Gebouw>) {
+                override fun onResponse(call: Call<Gebouw>, response: Response<Gebouw>) {
 
-                //navigate to addRisicosToGebouw
-                view?.findNavController()
-                    ?.navigate(be.adembacaj.bureau9000.R.id.)
-            }
+                    //navigate to addRisicosToGebouw
+                    view?.findNavController()
+                        ?.navigate(be.adembacaj.bureau9000.R.id.action_addGebouwFragment_to_risicosGebouwFragment)
+                }
 
-            override fun onFailure(call: Call<Gebouw>, t: Throwable) {
-                Toast.makeText(context, "error,try again later", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onFailure(call: Call<Gebouw>, t: Throwable) {
+                    Toast.makeText(context, "error,try again later", Toast.LENGTH_SHORT).show()
+                }
+            })
+
+        }
 
         return binding.root
     }

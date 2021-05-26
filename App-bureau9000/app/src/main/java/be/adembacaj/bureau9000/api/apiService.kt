@@ -64,8 +64,9 @@ interface ApiServiceRisicobeschrijving {
 }
 
 interface ApiServiceGebouw {
-    @GET("read.php")
-    fun getGebouwen(): Call<ArrayList<Gebouw>>
+    @POST("readByProjectId.php")
+    fun getGebouwenByProjectId(
+        @Query("projectId") id : Int): Call<ArrayList<Gebouw>>
 
     @Headers("Content-Type: application/json")
     @POST("create.php")

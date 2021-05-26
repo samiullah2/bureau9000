@@ -8,12 +8,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import be.adembacaj.bureau9000.api.Api_Gebouw
-import be.adembacaj.bureau9000.api.Api_Project
 import be.adembacaj.bureau9000.api.Gebouw
-import be.adembacaj.bureau9000.api.Project
 import be.adembacaj.bureau9000.databinding.FragmentGebouwBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,12 +25,13 @@ class GebouwFragment : Fragment() {
         //get the ID of the current project
         val idOfCurrentProject = arguments?.getInt("idOfCurrentProject")
 
-        Api_Gebouw.retrofitService.getGebouwen().enqueue(object : Callback<ArrayList<Gebouw>>
+        Api_Gebouw.retrofitService.getGebouwenByProjectId(idOfCurrentProject!!) .enqueue(object : Callback<ArrayList<Gebouw>>
         {
             override fun onResponse(
                 call: Call<ArrayList<Gebouw>>,
                 response: Response<ArrayList<Gebouw>>
             ) {
+
                 val gebouwen = mutableListOf<Gebouw>()
 
                 if (response.body().isNullOrEmpty()) {
@@ -69,7 +67,8 @@ class GebouwFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt("idOfCurrentProject", idOfCurrentProject!!)
 
-            Navigation.createNavigateOnClickListener(be.adembacaj.bureau9000.R.id.action_gebouwFragment_to_addGebouwFragment, bundle)
+            view?.findNavController()
+                ?.navigate(be.adembacaj.bureau9000.R.id.action_gebouwFragment_to_addGebouwFragment, bundle)
         }
 
         return binding.root

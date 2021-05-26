@@ -21,23 +21,48 @@ class Gebouw{
         $this->conn = $db;
     }
 
-    // read gebouwen
-    function read(){
+    // // read gebouwen
+    // function read(){
 
   
-    //select all query
-       $query = 
-       "SELECT id, naam, hoogte, adres, postcode, gemeente, functie, projectId
-        FROM gebouw";
+    // //select all query
+    //    $query = 
+    //    "SELECT id, naam, hoogte, adres, postcode, gemeente, functie, projectId
+    //     FROM gebouw";
 
+    // // prepare query statement
+    // $stmt = $this->conn->prepare($query);
+  
+    // // execute query
+    // $stmt->execute();
+  
+    // return $stmt;
+    // }
+
+
+    // search products
+    function readByProjectId($projectId){
+  
+    // select all query
+    $query = "SELECT id, naam, adres, postcode, gemeente, hoogte, functie, projectId
+                FROM gebouw
+                WHERE projectId = ?";
+  
     // prepare query statement
     $stmt = $this->conn->prepare($query);
+  
+    // // sanitize
+    // $projectId=htmlspecialchars(strip_tags($projectId));
+    // $projectId = "%{$projectId}%";
+  
+    // bind
+    $stmt->bindParam(1, $projectId);
   
     // execute query
     $stmt->execute();
   
     return $stmt;
-    }
+}
 
     
     // used when you want a specific gebouw

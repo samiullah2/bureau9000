@@ -4,149 +4,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Gebouw.AddGebouwFragment">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"
-        android:text="Vul de gegevens van het gebouw in"/>
+        android:fillViewport="false">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:text="Naam van het gebouw:">
-    </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextNaamGebouw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Vul hier de naam in...">
-    </EditText>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Vul de gegevens van het gebouw in"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:text="Adres van het gebouw:">
-    </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Naam van het gebouw:"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextAdresGebouw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Vul hier het adres in...">
-    </EditText>
+            <EditText
+                android:id="@+id/editTextNaamGebouw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:hint="Vul hier de naam in..." />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:text="Postcode:">
-    </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Adres van het gebouw:"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextPostcodeGebouw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Vul hier de postocde in...">
-    </EditText>
+            <EditText
+                android:id="@+id/editTextAdresGebouw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:hint="Vul hier het adres in..." />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:text="Gemeente:">
-    </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Postcode:"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextGemeenteGebouw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Vul hier de naam in...">
-    </EditText>
+            <EditText
+                android:id="@+id/editTextPostcodeGebouw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:hint="Vul hier de postocde in..." />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
-        android:text="Hoe hoog is het gebouw ?">
-    </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Gemeente:"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextHoogteGebouw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Vul hier de hoogte in...">
-    </EditText>
+            <EditText
+                android:id="@+id/editTextGemeenteGebouw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:hint="Vul hier de naam in..." />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:text="Functie van het gebouw:">
-    </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Hoe hoog is het gebouw ?"
+                android:textSize="18sp" />
 
-    <Spinner
-        android:id="@+id/spinnerFunctieGebouw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:entries="@array/functiesGebouwArray"/>
+            <EditText
+                android:id="@+id/editTextHoogteGebouw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:hint="Vul hier de hoogte in..." />
 
-    <Button
-        android:id="@+id/buttonAddGebouw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Voeg gebouw toe"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Functie van het gebouw:"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerFunctieGebouw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:entries="@array/functiesGebouwArray"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/buttonAddGebouw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Voeg gebouw toe" />
 
 
-</LinearLayout>
+        </LinearLayout>
 
+    </ScrollView>
 </layout>
