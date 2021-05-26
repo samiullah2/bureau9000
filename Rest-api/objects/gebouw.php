@@ -9,8 +9,11 @@ class Gebouw{
     public $id;
     public $naam;
     public $hoogte;
+    public $adres;
+    public $postcode;
+    public $gemeente;
+    public $functie;
     public $projectId;
-    public $risicobeschrijvingId;
     
   
     // constructor with $db as database connection
@@ -24,8 +27,8 @@ class Gebouw{
   
     //select all query
        $query = 
-       "SELECT id, naam, hoogte, projectId, risicobeschrijvingId
-        FROM gebouw ";
+       "SELECT id, naam, hoogte, adres, postcode, gemeente, functie, projectId
+        FROM gebouw";
 
     // prepare query statement
     $stmt = $this->conn->prepare($query);
@@ -41,7 +44,7 @@ class Gebouw{
     function readOne(){
   
     // query to read single record
-    $query = "SELECT id, naam, hoogte, projectId, risicobeschrijvingId
+    $query = "SELECT id, naam, hoogte, adres, postcode, gemeente, functie, projectId
               FROM gebouw 
               WHERE id = ?
               LIMIT 0,1";
@@ -61,9 +64,47 @@ class Gebouw{
     // set values to object properties
     $this->naam = $row['naam'];
     $this->hoogte = $row['hoogte'];
+    $this->adres = $row['adres'];
+    $this->postcode = $row['postcode'];
+    $this->gemeente = $row['gemeente'];
+    $this->functie = $row['functie'];
     $this->projectId = $row['projectId'];
-    $this->projectId = $row['risicobeschrijvingId'];
     }
 
+    // create gebouw
+    function create(){
+  
+        // query to insert record
+        $query = "INSERT INTO gebouw
+                    SET naam=:naam, hoogte=:hoogte,adres=:adres,postcode=:postcode,gemeente=:gemeente,functie=:functie,projectId=:projectId";
+      
+        // prepare query
+        $stmt = $this->conn->prepare($query);
+      
+        // sanitize
+        $this->naam=htmlspecialchars(strip_tags($this->naam));
+        $this->hoogte=htmlspecialchars(strip_tags($this->hoogte));
+        $this->adres=htmlspecialchars(strip_tags($this->adres));
+        $this->postcode=htmlspecialchars(strip_tags($this->postcode));
+        $this->gemeente=htmlspecialchars(strip_tags($this->gemeente));
+        $this->functie=htmlspecialchars(strip_tags($this->functie));
+        $this->projectId=htmlspecialchars(strip_tags($this->projectId));
+      
+        // bind values
+        $stmt->bindParam(":naam", $this->naam);
+        $stmt->bindParam(":hoogte", $this->hoogte);
+        $stmt->bindParam(":adres", $this->adres);
+        $stmt->bindParam(":postcode", $this->postcode);
+        $stmt->bindParam(":gemeente", $this->gemeente);
+        $stmt->bindParam(":functie", $this->functie);
+        $stmt->bindParam(":projectId", $this->projectId);
+      
+        // execute query
+        if($stmt->execute()){
+            return true;
+        }
+      
+        return false;
+        }
 }
 ?>

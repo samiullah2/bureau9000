@@ -4,8 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import be.adembacaj.bureau9000.api.Api_Project
+import be.adembacaj.bureau9000.api.Project
 import be.adembacaj.bureau9000.databinding.FragmentGebouwBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class GebouwFragment : Fragment() {
     override fun onCreateView(
@@ -24,8 +30,8 @@ class GebouwFragment : Fragment() {
 //                Toast.makeText(context, "error,try again later", Toast.LENGTH_SHORT).show()
 //            }
 //        })
-
-        //binding.buttonNieuwGebouw.setOnClickListener()
+//
+//        binding.buttonNieuwGebouw.setOnClickListener()
 
         return binding.root
     }

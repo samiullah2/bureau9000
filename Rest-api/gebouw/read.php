@@ -33,13 +33,16 @@ if($num>0){
         // this will make $row['name'] to
         // just $name only
         extract($row);
-  
+
         $gebouw_item=array(
             "id" => $id,
             "naam" => $naam,
             "hoogte" => $hoogte,
-            "projectId" => $projectId,
-            "risicobeschrijvingId" => $risicobeschrijvingId
+            "adres" => $adres,
+            "postcode" => $postcode,
+            "gemeente" => $gemeente,
+            "functie" => $functie,
+            "projectId" => $projectId
         );
   
         array_push($gebouws_arr, $gebouw_item);

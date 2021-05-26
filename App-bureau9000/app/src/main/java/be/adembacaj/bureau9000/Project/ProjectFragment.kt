@@ -2,6 +2,7 @@ package be.adembacaj.bureau9000.Project
 
 import android.R as RLayout
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,7 +44,9 @@ class ProjectFragment : Fragment() {
                     binding.ListViewProjecten.setOnItemClickListener { myAdapter, myView, myItemInt, mylng ->
                         val selectedFromList = binding.ListViewProjecten.getItemAtPosition(myItemInt)
 
-                        val bundle = bundleOf("selectedFromList" to selectedFromList)
+                        val bundle = Bundle()
+                        bundle.putString("selectedFromList", selectedFromList.toString())
+
                         view?.findNavController()
                             ?.navigate(R.id.action_projectFragment_to_projectGegevensFragment, bundle)
                     }

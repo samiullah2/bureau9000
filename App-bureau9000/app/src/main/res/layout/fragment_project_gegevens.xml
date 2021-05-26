@@ -17,8 +17,8 @@
             android:id="@+id/header_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INFO PROJECT"
             android:layout_marginTop="25dp"
+            android:text="INFO PROJECT, HIER ZAL JE OOK DE INFO KUNNEN WIJZIGEN"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold" />

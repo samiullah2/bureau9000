@@ -29,8 +29,11 @@ if($gebouw->naam!=null){
         "id" =>  $gebouw->id,
         "naam" => $gebouw->naam,
         "hoogte" => $gebouw->hoogte,
-        "projectId" => $projectId,
-        "risicobeschrijvingId" => $risicobeschrijvingId
+        "adres" => $gebouw->adres,
+        "postcode" => $gebouw->postcode,
+        "gemeente" => $gebouw->gemeente,
+        "functie" => $gebouw->functie,
+        "projectId" => $gebouw->projectId,
     );
   
     // set response code - 200 OK

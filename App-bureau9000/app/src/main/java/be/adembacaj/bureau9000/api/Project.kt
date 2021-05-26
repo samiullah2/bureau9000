@@ -10,5 +10,5 @@ data class Project(
 ) : Parcelable
 
 {
-    override fun toString(): String = naam
+    override fun toString(): String = "$id - $naam"
 }

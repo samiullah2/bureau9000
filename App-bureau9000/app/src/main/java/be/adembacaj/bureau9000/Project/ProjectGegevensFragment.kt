@@ -1,6 +1,7 @@
 package be.adembacaj.bureau9000.Project
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,20 +22,32 @@ class ProjectGegevensFragment : Fragment() {
     ): View? {
         val binding = FragmentProjectGegevensBinding.inflate(inflater)
 
-        Api_Project.retrofitService.getOneProject().enqueue(object : Callback<Project> {
-            override fun onResponse(call: Call<Project>, response: Response<Project>) {
-                binding.editTextNaam.setText(response.body()?.naam)
-                //binding.editTextContactPersoonInfo.setText(response.body()?.contactPersoon)
-                //binding.editTextTelefoonContactPersoonInfo.setText(response.body()?.telefoonContactPersoon)
-            }
+        val selectedFromList = arguments?.getString("selectedFromList").toString()
+        val idOfCurrentProjectString = selectedFromList.substringBefore(" ", "error")
+        val idOfCurrentProject = idOfCurrentProjectString.toInt()
 
-            override fun onFailure(call: Call<Project>, t: Throwable) {
-                Toast.makeText(context, "error,try again later", Toast.LENGTH_SHORT).show()
-            }
-        })
+
+        // HIER ZOU DE ADVISEUR DE KLANTENGEGEVENS KUNNEN AANPASSEN MOGE ER IETS FOUT GEWEEST ZIJN
+
+//        Api_Project.retrofitService.getOneProject().enqueue(object : Callback<Project> {
+//            override fun onResponse(call: Call<Project>, response: Response<Project>) {
+//                binding.editTextNaam.setText(response.body()?.naam)
+//                //binding.editTextContactPersoonInfo.setText(response.body()?.contactPersoon)
+//                //binding.editTextTelefoonContactPersoonInfo.setText(response.body()?.telefoonContactPersoon)
+//            }
+//
+//            override fun onFailure(call: Call<Project>, t: Throwable) {
+//                Toast.makeText(context, "error,try again later", Toast.LENGTH_SHORT).show()
+//            }
+//        })
+
+
 
         binding.buttonGebouwen.setOnClickListener{
-            view?.findNavController()?.navigate(R.id.action_projectGegevensFragment_to_gebouwFragment)
+            val bundle = Bundle()
+            bundle.putString("idOfCurrentProject", idOfCurrentProject.toString())
+
+            view?.findNavController()?.navigate(R.id.action_projectGegevensFragment_to_gebouwFragment, bundle)
         }
 
         return binding.root
