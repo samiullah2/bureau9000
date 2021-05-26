@@ -37,14 +37,13 @@ class KiesRisicoFragment : Fragment() {
                         val adapter = ArrayAdapter(context!!, R.layout.simple_list_item_1, listRISICOS)
                         binding.listRisicos.adapter = adapter
 
-                        binding.listRisicos.setOnItemClickListener(OnItemClickListener
-                        { myAdapter, myView, myItemInt, mylng ->
+                        binding.listRisicos.setOnItemClickListener { myAdapter, myView, myItemInt, mylng ->
                             val selectedFromList = binding.listRisicos.getItemAtPosition(myItemInt)
 
                             val bundle = bundleOf("selectedFromList" to selectedFromList)
                             view?.findNavController()
                                     ?.navigate(be.adembacaj.bureau9000.R.id.action_kiesRisicoFragment_to_risicosFragment, bundle)
-                    })
+                        }
 
                     }
 

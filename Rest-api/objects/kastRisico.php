@@ -1,14 +1,14 @@
 <?php
-class Risicobeschrijving{
+class KastRisico{
   
     // database connection and table name
     private $conn;
-    private $table_name = "risicobeschrijving";
+    private $table_name = "kastRisico";
   
     // object properties
     public $id;
     public $beschrijving;
-    public $waarde;
+    public $w;
     
   
     // constructor with $db as database connection
@@ -16,14 +16,14 @@ class Risicobeschrijving{
         $this->conn = $db;
     }
 
-    // read risicobeschrijvingen
+    // read kastRisico
 function read(){
 
   
     //select all query
        $query = 
-       "SELECT id, beschrijving, waarde
-        FROM risicobeschrijving ";
+       "SELECT id, beschrijving, w
+        FROM kastRisico ";
 
     // prepare query statement
     $stmt = $this->conn->prepare($query);
@@ -35,19 +35,19 @@ function read(){
     }
 
     
-    // used when you want a specific risicobeschrijving
+    // used when you want a specific kastRisico
     function readOne(){
   
     // query to read single record
-    $query = "SELECT id, beschrijving, waarde
-              FROM risicobeschrijving 
+    $query = "SELECT id, beschrijving, w
+              FROM kastRisico 
               WHERE id = ?
               LIMIT 0,1";
   
     // prepare query statement
     $stmt = $this->conn->prepare( $query );
   
-    // bind id of risicobeschrijving
+    // bind id of kastRisico
     $stmt->bindParam(1, $this->id);
   
     // execute query
@@ -58,7 +58,7 @@ function read(){
   
     // set values to object properties
     $this->beschrijving = $row['beschrijving'];
-    $this->waarde = $row['waarde'];
+    $this->w = $row['w'];
     }
 
     

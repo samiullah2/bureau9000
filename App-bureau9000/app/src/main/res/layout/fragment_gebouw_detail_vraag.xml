@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".GebouwDetailVraagFragment">
+    tools:context=".Gebouw.GebouwDetailVraagFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -121,7 +121,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextNaam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="436dp"

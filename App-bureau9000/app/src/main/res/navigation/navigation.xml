@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/risicosFragment">
+    app:startDestination="@id/projectFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="be.adembacaj.bureau9000.LoginFragment"
@@ -15,21 +15,16 @@
     </fragment>
     <fragment
         android:id="@+id/projectFragment"
-        android:name="be.adembacaj.bureau9000.ProjectFragment"
+        android:name="be.adembacaj.bureau9000.Project.ProjectFragment"
         android:label="fragment_project"
         tools:layout="@layout/fragment_project" >
         <action
-            android:id="@+id/action_projectFragment_to_klantenGegevensFragment"
-            app:destination="@id/klantenGegevensFragment" />
-        <action
             android:id="@+id/action_projectFragment_to_addProjectFragment"
             app:destination="@id/addProjectFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_projectGegevensFragment"
+            app:destination="@id/projectGegevensFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/klantenGegevensFragment"
-        android:name="be.adembacaj.bureau9000.KlantenGegevensFragment"
-        android:label="fragment_klanten_gegevens"
-        tools:layout="@layout/fragment_klanten_gegevens" />
     <fragment
         android:id="@+id/detailKastFragment"
         android:name="be.adembacaj.bureau9000.DetailKastFragment"
@@ -37,17 +32,17 @@
         tools:layout="@layout/fragment_detail_kast" />
     <fragment
         android:id="@+id/gebouwDetailVraagFragment"
-        android:name="be.adembacaj.bureau9000.GebouwDetailVraagFragment"
+        android:name="be.adembacaj.bureau9000.Gebouw.GebouwDetailVraagFragment"
         android:label="fragment_gebouw_detail_vraag"
         tools:layout="@layout/fragment_gebouw_detail_vraag" />
     <fragment
         android:id="@+id/addProjectFragment"
-        android:name="be.adembacaj.bureau9000.AddProjectFragment"
+        android:name="be.adembacaj.bureau9000.Project.AddProjectFragment"
         android:label="fragment_add_project"
-        tools:layout="@layout/fragment_add_project" >
+        tools:layout="@layout/fragment_add_project">
         <action
-            android:id="@+id/action_addProjectFragment_to_projectFragment"
-            app:destination="@id/projectFragment" />
+            android:id="@+id/action_addProjectFragment_to_addProjectGegevensFragment"
+            app:destination="@id/addProjectGegevensFragment" />
     </fragment>
     <fragment
         android:id="@+id/risicosFragment"
@@ -66,5 +61,28 @@
         <action
             android:id="@+id/action_kiesRisicoFragment_to_risicosFragment"
             app:destination="@id/risicosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gebouwFragment"
+        android:name="be.adembacaj.bureau9000.Gebouw.GebouwFragment"
+        android:label="fragment_gebouw"
+        tools:layout="@layout/fragment_gebouw" />
+    <fragment
+        android:id="@+id/projectGegevensFragment"
+        android:name="be.adembacaj.bureau9000.Project.ProjectGegevensFragment"
+        android:label="fragment_project_gegevens"
+        tools:layout="@layout/fragment_project_gegevens" >
+        <action
+            android:id="@+id/action_projectGegevensFragment_to_gebouwFragment"
+            app:destination="@id/gebouwFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProjectGegevensFragment"
+        android:name="be.adembacaj.bureau9000.Project.AddProjectGegevensFragment"
+        android:label="fragment_add_project_gegevens"
+        tools:layout="@layout/fragment_add_project_gegevens" >
+        <action
+            android:id="@+id/action_addProjectGegevensFragment_to_projectFragment"
+            app:destination="@id/projectFragment" />
     </fragment>
 </navigation>

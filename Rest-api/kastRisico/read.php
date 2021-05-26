@@ -7,24 +7,24 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // include database and object files
 require '../config/database.php';
-require '../objects/risicobeschrijving.php';
+require '../objects/kastRisico.php';
   
-// instantiate database and risicobeschrijving object
+// instantiate database and kastRisico object
 $database = new Database();
 $db = $database->getConnection();
   
 // initialize object
-$risicobeschrijving = new risicobeschrijving($db);
+$kastRisico = new KastRisico($db);
 
-// query risicobeschrijvings
-$stmt = $risicobeschrijving->read();
+// query kastRisicos
+$stmt = $kastRisico->read();
 $num = $stmt->rowCount();
   
 // check if more than 0 record found
 if($num>0){
   
-    // risicobeschrijvings array
-    $risicobeschrijvings_arr=array();
+    // kastRisicos array
+    $kastRisicos_arr=array();
   
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -34,31 +34,31 @@ if($num>0){
         // just $name only
         extract($row);
   
-        $risicobeschrijving_item=array(
+        $kastRisico_item=array(
             "id" => $id,
             "beschrijving" => $beschrijving,
-            "waarde" => $waarde
+            "w" => $w
         );
   
-        array_push($risicobeschrijvings_arr, $risicobeschrijving_item);
+        array_push($kastRisicos_arr, $kastRisico_item);
     }
   
     // set response code - 200 OK
     http_response_code(200);
   
-    // show risicobeschrijvings data in json format
-    echo json_encode($risicobeschrijvings_arr);
+    // show kastRisicos data in json format
+    echo json_encode($kastRisicos_arr);
 }
   
-// no risicobeschrijvings found will be here
+// no kastRisicos found will be here
 
 else{
   
   // set response code - 404 Not found
   http_response_code(404);
 
-  // tell the user no risicobeschrijvings found
+  // tell the user no kastRisicos found
   echo json_encode(
-      array("message" => "No risicobeschrijvings found.")
+      array("message" => "No kastRisicos found.")
   );
 }

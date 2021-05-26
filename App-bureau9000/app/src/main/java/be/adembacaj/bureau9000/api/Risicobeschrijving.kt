@@ -9,6 +9,7 @@ data class Risicobeschrijving(
     val beschrijving: String,
     val waarde: String,
 ) : Parcelable
+
 {
     override fun toString(): String = beschrijving
 }
