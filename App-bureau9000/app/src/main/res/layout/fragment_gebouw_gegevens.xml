@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Project.ProjectGegevensFragment">
+    tools:context=".Gebouw.GebouwGegevensFragment">
+
+    <data>
+
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="INFO PROJECT, HIER ZAL JE OOK DE INFO KUNNEN WIJZIGEN"
+            android:text="INFO GEBOUW, HIER ZAL JE OOK DE INFO KUNNEN WIJZIGEN"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -57,8 +60,8 @@
             android:id="@+id/Email_text"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:layout_marginTop="25dp"
             android:text="Telefoon Contact Persoon"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="20sp" />
@@ -72,12 +75,12 @@
             android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/buttonGebouwen"
+            android:id="@+id/buttonRisicosGebouwen"
             android:layout_width="326dp"
-            android:layout_marginTop="25dp"
             android:layout_height="61dp"
             android:layout_marginLeft="@android:dimen/app_icon_size"
-            android:text="Gebouwen -->" />
+            android:layout_marginTop="25dp"
+            android:text="RISICOS -->" />
 
     </LinearLayout>
 </layout>

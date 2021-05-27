@@ -40,26 +40,26 @@ class Gebouw{
     // }
 
 
-    // search products
+    // read all products with specific ID
     function readByProjectId($projectId){
   
-    // select all query
-    $query = "SELECT id, naam, adres, postcode, gemeente, hoogte, functie, projectId
-                FROM gebouw
-                WHERE projectId = ?";
-  
-    // prepare query statement
-    $stmt = $this->conn->prepare($query);
-  
-    // // sanitize
-    // $projectId=htmlspecialchars(strip_tags($projectId));
-    // $projectId = "%{$projectId}%";
-  
-    // bind
-    $stmt->bindParam(1, $projectId);
-  
-    // execute query
-    $stmt->execute();
+        // select all query
+        $query = "SELECT id, naam, adres, postcode, gemeente, hoogte, functie, projectId
+                    FROM gebouw
+                    WHERE projectId = ?";
+    
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+    
+        // // sanitize
+        // $projectId=htmlspecialchars(strip_tags($projectId));
+        // $projectId = "%{$projectId}%";
+    
+        // bind
+        $stmt->bindParam(1, $projectId);
+    
+        // execute query
+        $stmt->execute();
   
     return $stmt;
 }

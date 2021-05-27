@@ -48,7 +48,7 @@ class AddGebouwFragment : Fragment() {
 
                     //navigate to addRisicosToGebouw
                     view?.findNavController()
-                        ?.navigate(be.adembacaj.bureau9000.R.id.action_addGebouwFragment_to_risicosGebouwFragment)
+                        ?.navigate(be.adembacaj.bureau9000.R.id.action_addGebouwFragment_to_gebouwFragment)
                 }
 
                 override fun onFailure(call: Call<Gebouw>, t: Throwable) {

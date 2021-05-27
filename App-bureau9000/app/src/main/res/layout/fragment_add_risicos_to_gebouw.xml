@@ -13,260 +13,102 @@
         android:fillViewport="false">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/loginscrn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="RISICO OVERZICHT"
-                android:textSize="25sp"
-                android:textStyle="bold"
                 android:layout_gravity="center"
-                android:textColor="#8BC34A" />
+                android:layout_marginTop="30dp"
+                android:text="EEN RISICO TOEVOEGEN"
+                android:textColor="#8BC34A"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnKiesRisico"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:text="Klik op een risico om deze te selecteren"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/ListViewRisicoToevoegenGebouw"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:minHeight="300dp"
                 android:text="Kies een risico" />
 
             <TextView
-                android:id="@+id/textViewRisicoBesc"
-                android:layout_width="match_parent"
+                android:id="@+id/TextViewIdSelectedRisico"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:gravity="center_horizontal"
-                android:text="LABEL"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:text="12323"
+                android:textSize="1sp"></TextView>
 
             <TextView
-                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Voeg hier een foto toe"
-                android:textSize="20sp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="20dp"
-                android:textColor="#8BC34A"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="395dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginRight="40dp"
-                android:contentDescription="image"
-                tools:src="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mogelijke risicobeschrijving"
-                android:textSize="20sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Geselecteerde risico:"
                 android:textColor="#8BC34A"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:contentDescription="foto kast" />
-
-            <EditText
-                android:id="@+id/editTextTextMultiLine"
-                android:layout_width="343dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:gravity="start|top"
-                android:inputType="textMultiLine"
-                android:layout_marginEnd="30dp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/TextViewGebouwRisicoBesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Preventiemaatregel"
-                android:textSize="20sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="hier komt de risicobeschrijving"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="waarschijnlijkheid van het risico:"
                 android:textColor="#8BC34A"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:contentDescription="foto kast" />
-
-            <EditText
-                android:id="@+id/editTextTextMultiLine2"
-                android:layout_width="343dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:gravity="start|top"
-                android:inputType="textMultiLine"
-                android:layout_marginEnd="30dp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/TextViewGebouwRisicoW"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:text="RISICOCIJFER BEREKENEN"
-                android:textAlignment="center"
-                android:textColor="#C30505"
-                android:gravity="center_horizontal" />
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="hier komt de waarschijnlijkheid "
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ersnt"
-                android:textSize="20sp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:textColor="#FF9800" />
-
-            <EditText
-                android:id="@+id/editTextNumber2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:inputType="number" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Frequentie"
-                android:textSize="20sp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:textColor="#2196F3" />
-
-            <EditText
-                android:id="@+id/editTextNumber3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:inputType="number" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ernst x Frequentie"
-                android:textSize="20sp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:textColor="#E91E63" />
-
-            <EditText
-                android:id="@+id/editTextNumber4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:inputType="number" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Resultaat: Ernst x Frequentie x W"
-                android:textSize="25sp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:textColor="#E10000" />
-
-            <EditText
-                android:id="@+id/editTextNumber5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:inputType="number" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonGebouwRisicoToevoegen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
                 android:layout_marginLeft="40dp"
+                android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
-                android:text="Risico berekenen" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="30dp"
                 android:text="Risico toevoegen" />
 
 

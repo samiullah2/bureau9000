@@ -5,10 +5,22 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
+///////////////////////////////////////////////////////////////
+////////////////////          BASE URLS            ////////////
+///////////////////////////////////////////////////////////////
+
 private const val BASE_URL_PROJECT = "https://adembacaj.be/bureau9000/Rest-api/project/"
 private const val BASE_URL_RISICOBESCHRIJVING = "https://adembacaj.be/bureau9000/Rest-api/risicobeschrijving/"
 private const val BASE_URL_OPDRACHTGEVER = "https://adembacaj.be/bureau9000/Rest-api/opdrachtgever/"
 private const val BASE_URL_GEBOUW = "https://adembacaj.be/bureau9000/Rest-api/gebouw/"
+private const val BASE_URL_GEBOUWRISICO = "https://adembacaj.be/bureau9000/Rest-api/gebouwRisico/"
+private const val BASE_URL_GEBOUWRISICOGEBOUW = "https://adembacaj.be/bureau9000/Rest-api/gebouwRisicoGebouw/"
+
+
+///////////////////////////////////////////////////////////////
+////////////////////          BUILDERS            ////////////
+///////////////////////////////////////////////////////////////
+
 
 private val retrofit_Project = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
@@ -29,6 +41,21 @@ private val retrofit_Gebouw = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
     .baseUrl(BASE_URL_GEBOUW)
     .build()
+
+private val retrofit_GebouwRisico = Retrofit.Builder()
+    .addConverterFactory(GsonConverterFactory.create())
+    .baseUrl(BASE_URL_GEBOUWRISICO)
+    .build()
+
+private val retrofit_GebouwRisicoGebouw = Retrofit.Builder()
+    .addConverterFactory(GsonConverterFactory.create())
+    .baseUrl(BASE_URL_GEBOUWRISICOGEBOUW)
+    .build()
+
+///////////////////////////////////////////////////////////////
+////////////////////          INTERFACES            ////////////
+///////////////////////////////////////////////////////////////
+
 
 interface ApiServiceProject {
 //    @GET("login.php")
@@ -73,6 +100,23 @@ interface ApiServiceGebouw {
     fun addGebouw(@Body gebouwData: Gebouw): Call<Gebouw>
 }
 
+interface ApiServiceGebouwRisico {
+    @GET("read.php")
+    fun getRisicos(): Call<ArrayList<GebouwRisico>>
+
+    @GET("readOne.php")
+    fun getOneRisico(): Call<GebouwRisico>
+}
+
+interface ApiServiceGebouwRisicoGebouw {
+    @POST("create.php")
+    fun addGebouwRisicoGebouw(@Body gebouwRisicoGebouwData: GebouwRisicoGebouw): Call<GebouwRisicoGebouw>
+}
+
+
+///////////////////////////////////////////////////////////////
+////////////////////          OBJECTS              ////////////
+///////////////////////////////////////////////////////////////
 
 object Api_Project {
     val retrofitService : ApiServiceProject by lazy{
@@ -95,5 +139,17 @@ object Api_Risicobeschrijving {
 object Api_Gebouw {
     val retrofitService : ApiServiceGebouw by lazy{
         retrofit_Gebouw.create(ApiServiceGebouw::class.java)
+    }
+}
+
+object Api_GebouwRisico {
+    val retrofitService : ApiServiceGebouwRisico by lazy{
+        retrofit_GebouwRisico.create(ApiServiceGebouwRisico::class.java)
+    }
+}
+
+object Api_GebouwRisicoGebouw {
+    val retrofitService : ApiServiceGebouwRisicoGebouw by lazy{
+        retrofit_GebouwRisicoGebouw.create(ApiServiceGebouwRisicoGebouw::class.java)
     }
 }

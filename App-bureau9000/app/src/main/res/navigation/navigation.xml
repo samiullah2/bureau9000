@@ -65,6 +65,9 @@
         <action
             android:id="@+id/action_gebouwFragment_to_addGebouwFragment"
             app:destination="@id/addGebouwFragment" />
+        <action
+            android:id="@+id/action_gebouwFragment_to_gebouwGegevensFragment"
+            app:destination="@id/gebouwGegevensFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectGegevensFragment"
@@ -90,17 +93,34 @@
         android:label="fragment_add_gebouw"
         tools:layout="@layout/fragment_add_gebouw" >
         <action
-            android:id="@+id/action_addGebouwFragment_to_risicosGebouwFragment"
-            app:destination="@id/risicosGebouwFragment" />
+            android:id="@+id/action_addGebouwFragment_to_gebouwFragment"
+            app:destination="@id/gebouwFragment" />
     </fragment>
     <fragment
         android:id="@+id/addRisicosToGebouwFragment"
         android:name="be.adembacaj.bureau9000.Gebouw.AddRisicosToGebouwFragment"
         android:label="fragment_add_risicos_to_gebouw"
-        tools:layout="@layout/fragment_add_risicos_to_gebouw" />
+        tools:layout="@layout/fragment_add_risicos_to_gebouw" >
+        <action
+            android:id="@+id/action_addRisicosToGebouwFragment_to_risicosGebouwFragment"
+            app:destination="@id/risicosGebouwFragment" />
+    </fragment>
     <fragment
         android:id="@+id/risicosGebouwFragment"
         android:name="be.adembacaj.bureau9000.Gebouw.RisicosGebouwFragment"
         android:label="fragment_risicos_gebouw"
-        tools:layout="@layout/fragment_risicos_gebouw" />
+        tools:layout="@layout/fragment_risicos_gebouw" >
+        <action
+            android:id="@+id/action_risicosGebouwFragment_to_addRisicosToGebouwFragment"
+            app:destination="@id/addRisicosToGebouwFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gebouwGegevensFragment"
+        android:name="be.adembacaj.bureau9000.Gebouw.GebouwGegevensFragment"
+        android:label="fragment_gebouw_gegevens"
+        tools:layout="@layout/fragment_gebouw_gegevens" >
+        <action
+            android:id="@+id/action_gebouwGegevensFragment_to_risicosGebouwFragment"
+            app:destination="@id/risicosGebouwFragment" />
+    </fragment>
 </navigation>

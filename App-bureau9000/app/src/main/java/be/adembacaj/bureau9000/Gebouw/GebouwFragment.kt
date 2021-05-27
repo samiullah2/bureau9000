@@ -44,14 +44,15 @@ class GebouwFragment : Fragment() {
                     binding.ListViewGebouwen.adapter = adapter
 
                     binding.ListViewGebouwen.setOnItemClickListener { myAdapter, myView, myItemInt, mylng ->
-                        val selectedFromList = binding.ListViewGebouwen.getItemAtPosition(myItemInt)
+                        val selectedGebouwFromListview = binding.ListViewGebouwen.getItemAtPosition(myItemInt)
 
                         val bundle = Bundle()
-                        bundle.putString("selectedFromList", selectedFromList.toString())
+                        bundle.putString("selectedGebouwFromListview", selectedGebouwFromListview.toString())
+                        bundle.putInt("idOfCurrentProject", idOfCurrentProject!!)
 
-                        // go to info wijzigen ?
-//                        view?.findNavController()
-//                            ?.navigate(be.adembacaj.bureau9000.R.id.action_projectFragment_to_projectGegevensFragment, bundle)
+                        // Navigate to GebouwGegevens to edit
+                        view?.findNavController()
+                            ?.navigate(be.adembacaj.bureau9000.R.id.action_gebouwFragment_to_gebouwGegevensFragment, bundle)
                     }
                 }
             }
@@ -68,7 +69,7 @@ class GebouwFragment : Fragment() {
             bundle.putInt("idOfCurrentProject", idOfCurrentProject!!)
 
             view?.findNavController()
-                ?.navigate(be.adembacaj.bureau9000.R.id.action_gebouwFragment_to_addGebouwFragment, bundle)
+                ?.navigate(be.adembacaj.bureau9000.R.id.action_gebouwGegevensFragment_to_risicosGebouwFragment, bundle)
         }
 
         return binding.root

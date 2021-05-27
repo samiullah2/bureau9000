@@ -16,6 +16,6 @@ data class Gebouw(
 
 ) : Parcelable
 {
-    override fun toString(): String = "$id - $naam $functie"
+    override fun toString(): String = "$id - $naam ($functie)"
 }
 
