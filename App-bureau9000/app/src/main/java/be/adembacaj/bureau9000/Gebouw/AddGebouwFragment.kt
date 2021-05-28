@@ -46,9 +46,12 @@ class AddGebouwFragment : Fragment() {
 
                 override fun onResponse(call: Call<Gebouw>, response: Response<Gebouw>) {
 
+                    val bundle = Bundle()
+                    bundle.putInt("idOfCurrentProject", idOfCurrentProject)
+
                     //navigate to addRisicosToGebouw
                     view?.findNavController()
-                        ?.navigate(be.adembacaj.bureau9000.R.id.action_addGebouwFragment_to_gebouwFragment)
+                        ?.navigate(be.adembacaj.bureau9000.R.id.action_addGebouwFragment_to_gebouwFragment, bundle)
                 }
 
                 override fun onFailure(call: Call<Gebouw>, t: Throwable) {

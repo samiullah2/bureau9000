@@ -9,6 +9,11 @@ class GebouwRisicoGebouw{
     public $id;
     public $gebouwId;
     public $gebouwRisicoId;
+
+    public $beschrijving;
+    public $w;
+
+
     
   
     // constructor with $db as database connection
@@ -20,9 +25,9 @@ class GebouwRisicoGebouw{
     function readByGebouwId($gebouwId){
   
         // select query
-        $query = "SELECT id, gebouwId, gebouwRisicoId 
-                    FROM gebouwRisicoGebouw
-                    WHERE gebouwId = ?";
+        $query = "SELECT GR.id, GR.beschrijving, GR.w
+                    FROM gebouwRisicoGebouw GRG JOIN gebouwRisico GR on GRG.gebouwRisicoId = GR.id
+                    WHERE GRG.gebouwId = ?";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);

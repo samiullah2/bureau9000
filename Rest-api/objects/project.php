@@ -8,6 +8,14 @@ class Project{
     // object properties
     public $id;
     public $naam;
+
+    // deze worden gebruikt om een project te kunnen wijzigen/updaten
+    public $opdrachtgeverNaam;
+    public $adres;
+    public $postcode;
+    public $gemeente;
+    public $email;
+    public $klantNaam; 
     
   
     // constructor with $db as database connection
@@ -58,6 +66,37 @@ class Project{
     // set values to object properties
     $this->naam = $row['naam'];
     }
+
+    // used when you want a specific project
+    function readOneWholeProject(){
+  
+        // query to read single record
+        $query = "SELECT p.id, p.naam, o.naam AS opdrachtgeverNaam, o.adres, o.postcode, o.gemeente, o.email, o.klantNaam
+                    FROM opdrachtgever o join project p on o.projectId = p.id 
+                    WHERE p.id = ?
+                    LIMIT 0,1";
+      
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+      
+        // bind id of project
+        $stmt->bindParam(1, $this->id);
+      
+        // execute query
+        $stmt->execute();
+      
+        // get retrieved row
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      
+        // set values to object properties
+        $this->naam = $row['naam'];
+        $this->opdrachtgeverNaam = $row['opdrachtgeverNaam'];
+        $this->adres = $row['adres'];
+        $this->postcode = $row['postcode'];
+        $this->gemeente = $row['gemeente'];
+        $this->email = $row['email'];
+        $this->klantNaam = $row['klantNaam'];
+        }
 
 
     // used when you want to search for a specific project based on his name

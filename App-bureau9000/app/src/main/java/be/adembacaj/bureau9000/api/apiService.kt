@@ -77,6 +77,10 @@ interface ApiServiceProject {
     fun getOneProjectByName(
         @Query("naam") naam : String): Call<Project>
 
+    @GET("readOneWholeProject.php")
+    fun getOneWholeProject(
+        @Query("id") id : Int): Call<ProjectEnOpdrachtgever>
+
 }
 
 interface ApiServiceOpdrachtgever {
@@ -111,6 +115,10 @@ interface ApiServiceGebouwRisico {
 interface ApiServiceGebouwRisicoGebouw {
     @POST("create.php")
     fun addGebouwRisicoGebouw(@Body gebouwRisicoGebouwData: GebouwRisicoGebouw): Call<GebouwRisicoGebouw>
+
+    @POST("readByGebouwId.php")
+    fun getrisicosByGebouw(
+        @Query("gebouwId") id : Int): Call<ArrayList<GebouwRisico>>
 }
 
 

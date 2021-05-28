@@ -24,12 +24,11 @@ class AddProjectGegevensFragment : Fragment() {
     ): View? {
         val binding = FragmentAddProjectGegevensBinding.inflate(inflater)
 
-
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
-
         val projectNaam = arguments?.getString("projectNaam").toString()
+        binding.TextViewNaamProject.text = projectNaam;
 
         binding.TextViewNaamKlant.visibility = View.GONE;
         binding.editTextNaamKlant.visibility = View.GONE;

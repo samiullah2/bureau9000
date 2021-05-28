@@ -38,8 +38,8 @@ if($num>0){
   
         $gebouwRisicoGebouw_item=array(
             "id" => $id,
-            "gebouwId" => $gebouwId,
-            "gebouwRisicoId" => $gebouwRisicoId
+            "beschrijving" => $beschrijving,
+            "w" => $w
         );
   
         array_push($gebouwRisicoGebouws_arr, $gebouwRisicoGebouw_item);

@@ -69,7 +69,7 @@ class GebouwFragment : Fragment() {
             bundle.putInt("idOfCurrentProject", idOfCurrentProject!!)
 
             view?.findNavController()
-                ?.navigate(be.adembacaj.bureau9000.R.id.action_gebouwGegevensFragment_to_risicosGebouwFragment, bundle)
+                ?.navigate(be.adembacaj.bureau9000.R.id.action_gebouwFragment_to_addGebouwFragment, bundle)
         }
 
         return binding.root

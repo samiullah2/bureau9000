@@ -1,6 +1,7 @@
 package be.adembacaj.bureau9000.Project
 
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import be.adembacaj.bureau9000.R
 import be.adembacaj.bureau9000.api.Api_Project
-import be.adembacaj.bureau9000.api.Project
+import be.adembacaj.bureau9000.api.ProjectEnOpdrachtgever
 import be.adembacaj.bureau9000.databinding.FragmentProjectGegevensBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,19 +30,28 @@ class ProjectGegevensFragment : Fragment() {
 
         // HIER ZOU DE ADVISEUR DE KLANTENGEGEVENS KUNNEN AANPASSEN MOGE ER IETS FOUT GEWEEST ZIJN
 
-//        Api_Project.retrofitService.getOneProject().enqueue(object : Callback<Project> {
-//            override fun onResponse(call: Call<Project>, response: Response<Project>) {
-//                binding.editTextNaam.setText(response.body()?.naam)
-//                //binding.editTextContactPersoonInfo.setText(response.body()?.contactPersoon)
-//                //binding.editTextTelefoonContactPersoonInfo.setText(response.body()?.telefoonContactPersoon)
-//            }
-//
-//            override fun onFailure(call: Call<Project>, t: Throwable) {
-//                Toast.makeText(context, "error,try again later", Toast.LENGTH_SHORT).show()
-//            }
-//        })
+        Api_Project.retrofitService.getOneWholeProject(idOfCurrentProject).enqueue(object : Callback<ProjectEnOpdrachtgever> {
+            override fun onResponse(call: Call<ProjectEnOpdrachtgever>, response: Response<ProjectEnOpdrachtgever>) {
 
+                binding.editTextNaamProject.setText(response.body()?.naam)
+                binding.editTextNaamOpdrachtGever.setText(response.body()?.opdrachtgeverNaam)
+                binding.editTextAdresOpdrachtgever.setText(response.body()?.adres)
+                binding.editTextPostcodeOpdrachtGever.setText(response.body()?.postcode.toString())
+                binding.editTextGemeenteOpdrachtGever.setText(response.body()?.gemeente)
+                binding.editTextContactOpdrachtGever.setText(response.body()?.email)
+                binding.editTextNaamKlant.setText(response.body()?.klantNaam)
 
+            }
+
+            override fun onFailure(call: Call<ProjectEnOpdrachtgever>, t: Throwable) {
+                Toast.makeText(context, "error,try again later", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        // nog te implementeren
+//        binding.buttonProjectGegevensUpdaten.setOnClickListener{
+//              BIJ HET IMPLEMENTEREN MOET JE DE POSTCODE WEER IN INT CONVERTEREN WANT STAAT VOORLOPIG IN STRING
+//        }
 
         binding.buttonGebouwen.setOnClickListener{
             val bundle = Bundle()

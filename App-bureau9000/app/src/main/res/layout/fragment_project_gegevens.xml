@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Project.ProjectGegevensFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,70 +19,174 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="INFO PROJECT, HIER ZAL JE OOK DE INFO KUNNEN WIJZIGEN"
+            android:text="PROJECTINFO WIJZZIGEN"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="326dp"
+            android:id="@+id/TextViewNaamProject"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@android:dimen/app_icon_size"
-            android:layout_marginTop="25dp"
-            android:text="Naam"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="20sp" />
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Naam project"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/editTextNaam"
-            android:layout_width="325dp"
+            android:id="@+id/editTextNaamProject"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@android:dimen/app_icon_size"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:hint="Naam Project..." />
 
         <TextView
-            android:layout_width="326dp"
+            android:id="@+id/TextViewNaamOpdrachtGever"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@android:dimen/app_icon_size"
-            android:layout_marginTop="25dp"
-            android:text="Contact Persoon"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="20sp" />
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Naam opdrachtgever"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/editTextContactPersoonInfo"
-            android:layout_width="325dp"
+            android:id="@+id/editTextNaamOpdrachtGever"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@android:dimen/app_icon_size"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:hint="Naam opdrachtgever..." />
+
+        <CheckBox
+            android:id="@+id/checkBoxKlantSame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:text="De naam van de klant is verschillend" />
 
         <TextView
-            android:id="@+id/Email_text"
-            android:layout_width="326dp"
+            android:id="@+id/TextViewNaamKlant"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="@android:dimen/app_icon_size"
-            android:text="Telefoon Contact Persoon"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="20sp" />
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Naam klant"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/editTextTelefoonContactPersoonInfo"
-            android:layout_width="326dp"
+            android:id="@+id/editTextNaamKlant"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@android:dimen/app_icon_size"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:hint="Naam klant..." />
+
+        <TextView
+            android:id="@+id/TextViewAdresOpdrachtgever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Adres opdrachtgever"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextAdresOpdrachtgever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Straat + nummer" />
+
+        <TextView
+            android:id="@+id/TextViewPostcodeOpdrachtGever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Postcode opdrachtgever"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextPostcodeOpdrachtGever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:gravity="center"
+            android:hint="Postcode" />
+
+        <TextView
+            android:id="@+id/TextViewGemeenteOpdrachtGever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Gemeente opdrachtgever"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextGemeenteOpdrachtGever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Gemeente" />
+
+        <TextView
+            android:id="@+id/TextViewContactOpdrachtGever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Email opdrachtgever "
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextContactOpdrachtGever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Email" />
+
+        <TextView
+            android:id="@+id/textViewProjectId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Email opdrachtgever "
+            android:textColor="@color/white"
+            android:textSize="1sp" />
+
+        <Button
+            android:id="@+id/buttonProjectGegevensUpdaten"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="Update" />
 
         <Button
             android:id="@+id/buttonGebouwen"
-            android:layout_width="326dp"
-            android:layout_marginTop="25dp"
-            android:layout_height="61dp"
-            android:layout_marginLeft="@android:dimen/app_icon_size"
-            android:text="Gebouwen -->" />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="Next (Gebouwen)" />
 
     </LinearLayout>
+    </ScrollView>
 </layout>
